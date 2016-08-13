@@ -3,7 +3,7 @@ import com.xebia.{ConsumerFactory, RabbitMQHelper}
 import org.specs2.matcher.Scope
 import org.specs2.mutable.Specification
 
-class ActiveMQSpecs extends Specification {
+class RabbitMQSpecs extends Specification {
 
   sequential
 
