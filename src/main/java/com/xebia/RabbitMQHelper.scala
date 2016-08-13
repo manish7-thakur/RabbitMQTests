@@ -10,7 +10,7 @@ class RabbitMQHelper(host: String = "localhost", port: Int = 5672) {
     factory.setPort(port)
     val connection = factory.newConnection()
     val channel = connection.createChannel()
-    channel.queueDeclare("HELLO", false, false, false, null)
+    channel.queueDeclare(queue, false, false, false, null)
     channel
   }
 
