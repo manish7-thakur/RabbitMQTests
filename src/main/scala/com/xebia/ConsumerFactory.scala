@@ -11,8 +11,8 @@ object ConsumerFactory extends DelayedMessageProcessingUtil {
         val bodyAsString = new String(body)
         println(s"$consumerTag processed message $bodyAsString at ${properties.getHeaders}")
         val delay = properties.getHeaders.get("x-delay").asInstanceOf[Int]
-        if(delay * 2 < 7000)
-        channel.basicPublish(envelope.getExchange, "", getDelayValuePropsBuilder(delay * 2).build(), bodyAsString.getBytes)
+        if (delay * 2 < 7000)
+          channel.basicPublish(envelope.getExchange, "", getDelayValuePropsBuilder(delay * 2).build(), bodyAsString.getBytes)
       }
     }
     consumer
