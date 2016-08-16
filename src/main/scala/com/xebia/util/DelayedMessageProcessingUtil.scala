@@ -1,20 +1,13 @@
 package com.xebia.util
 
-import java.util
-
+import scala.collection.JavaConversions._
 import com.rabbitmq.client.AMQP.BasicProperties
 
 trait DelayedMessageProcessingUtil {
   def getDelayValuePropsBuilder(delay: Int) = {
     val props = new BasicProperties.Builder()
-    val headers = new util.HashMap[String, Object]()
-    headers.put("x-delay", new Integer(delay))
-    props.headers(headers)
+    props.headers(Map("x-delay" -> new Integer(delay)))
   }
 
-  def getDelayedHeaderProps = {
-    val argus = new util.HashMap[String, Object]()
-    argus.put("x-delayed-type", "direct")
-    argus
-  }
+  def getDelayedHeaderProps = Map("x-delayed-type" -> "direct")
 }

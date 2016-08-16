@@ -5,6 +5,7 @@ import com.rabbitmq.client.Channel
 import com.xebia.util.DelayedMessageProcessingUtil
 import org.specs2.matcher.Scope
 import org.specs2.mutable.Specification
+import scala.collection.JavaConversions._
 
 
 class DelayedMessageProcessingQueueSpecs extends Specification with DelayedMessageProcessingUtil {
