@@ -1,6 +1,6 @@
 # RabbitMQTests
 The applications tests several capabilities that RabbitMQ provides. The tests were executed against a running rabbitmq server inside a docker
-container.
+container. The specs are written using Specs2 with Scala as the base language
 
 The tests for delayed message processing uses a plugin `rabbitmq_delayed_message_exchange` not available with docker default images. Use 
 the Dockerfile in the project source to build the docker image with delayed message processing. The Docker image is built on top of the 
